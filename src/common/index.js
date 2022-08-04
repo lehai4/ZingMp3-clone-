@@ -14,7 +14,7 @@ export {
 } from "../components/Section";
 export { default as Router } from "../Routes/Router";
 export { default as MySelf } from "../Page/MySelf";
-export { default as ZingChart } from "../Page/ZingChart";
+export { default as Explore } from "../Page/Explore";
 export { playlist } from "../MockApi/playlist";
 export { data1, data2 } from "../MockApi/FakeShare";
 export { fakeIconMusicBar } from "../MockApi/FakeIconMusicBar";

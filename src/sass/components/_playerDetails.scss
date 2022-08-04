@@ -16,9 +16,9 @@
     &:hover &__content__right {
       display: block;
     }
-    // &:hover &__content__right .level-item:nth-child(1) .icon {
-    //   color: $text-item-hover;
-    // }
+    &:hover &__content__right .level-item:nth-child(1) .icon {
+      color: $text-item-hover;
+    }
     &:hover span,
     &:hover .card-info__singer {
       max-width: $max-width-set;
@@ -84,4 +84,10 @@
       }
     }
   }
+}
+.active.player-queue__list__item:hover
+  .player-queue__list__item__content__right
+  .level-item
+  .icon {
+  color: $txt-white;
 }

@@ -1,6 +1,11 @@
 import Tippy from "@tippyjs/react";
+import { toast } from "react-toastify";
 import "tippy.js/dist/tippy.css";
+import "react-toastify/dist/ReactToastify.css";
 const ReferIcon = (props) => {
+  const handleClick = (e) => {
+    toast.error("Xin lỗi chức năng chưa cập nhật!");
+  };
   return (
     <>
       {props.status === true ? (
@@ -23,7 +28,10 @@ const ReferIcon = (props) => {
             {props?.data.map((item) => (
               <div className="level-item" key={item.id}>
                 <Tippy content={item.title}>
-                  <button className="zm-btn zm-tooltip-btn button">
+                  <button
+                    className="zm-btn zm-tooltip-btn button"
+                    onClick={() => handleClick(item)}
+                  >
                     <i className={`icon ${item.icon}`}></i>
                   </button>
                 </Tippy>

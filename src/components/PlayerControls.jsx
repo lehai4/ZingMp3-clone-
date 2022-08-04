@@ -11,21 +11,14 @@ const PlayerControls = (props) => {
         <div className="media">
           <div className="media-left">
             <figure className="image">
-              <img
-                src={
-                  song.links.images[0].url
-                    ? song.links.images[0].url
-                    : song.links.images[1].url
-                }
-                alt={song.name}
-              />
+              <img src={song?.image} alt={song?.name} />
             </figure>
           </div>
           <div className="media-content">
             <span className="song-title-item">
-              <span className="item-title title">{song.name}</span>
+              <span className="item-title title">{song?.name}</span>
             </span>
-            <h3 className="subtitle">{song.author}</h3>
+            <h3 className="subtitle">{song?.author}</h3>
           </div>
           <div className="media-right">
             <ReferIcon {...obj} />
@@ -35,7 +28,7 @@ const PlayerControls = (props) => {
       <div className="player-controls__player-bar">
         <AudioPlayer
           className="player-music"
-          src={`${song.url}`}
+          src={`${song?.url}`}
           layout="stacked-reverse"
           showSkipControls={true}
           showJumpControls={false}

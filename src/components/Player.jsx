@@ -1,6 +1,4 @@
-import { useState, useEffect, useContext } from "react";
-import { Songs } from "./Context/Context";
-
+import { useState, useEffect } from "react";
 import clsx from "clsx";
 import {
   PlayerDetails,
@@ -12,15 +10,16 @@ import {
   data2,
 } from "../common";
 
-const Player = () => {
-  const { dataSongs, song, setSong } = useContext(Songs);
+const Player = (props) => {
+  const { dataSongs, song, setSong } = props;
   const [idSong, setIdSong] = useState(0);
   const [active, setActive] = useState(0);
   const obj = {
     data: [...data2],
   };
+
   const handleSetSong = (idSong) => {
-    let song = dataSongs.find((song) => song.id === idSong);
+    let song = dataSongs.find((song) => Number(song.id) === idSong);
     if (!song) {
       setSong(dataSongs[0]);
     } else {
@@ -28,17 +27,17 @@ const Player = () => {
     }
   };
   const handlePlaySong = (idSong) => {
-    setIdSong(idSong);
-    handleSetSong(idSong);
+    setIdSong(Number(idSong));
+    handleSetSong(Number(idSong));
   };
   const handleNextSong = () => {
-    handleSetSong(song.id + 1);
-    setIdSong(song.id + 1);
+    handleSetSong(Number(song.id) + 1);
+    setIdSong(Number(song.id) + 1);
   };
   const handlePrevSong = () => {
-    handleSetSong(song.id - 1);
+    handleSetSong(Number(song.id) - 1);
     if (idSong === 0) setIdSong(0);
-    else setIdSong(song.id - 1);
+    else setIdSong(Number(song.id) - 1);
   };
   const handleNext = (type = false) => {
     type === true ? handleNextSong() : (type = false);
@@ -74,12 +73,16 @@ const Player = () => {
               </div>
             </div>
             <div className="player-queue__scroll">
-              <PlayerDetails
-                songs={dataSongs}
-                idSong={idSong}
-                song={song}
-                handlePlaySong={handlePlaySong}
-              />
+              {active === 0 ? (
+                <PlayerDetails
+                  songs={dataSongs}
+                  idSong={idSong}
+                  song={song}
+                  handlePlaySong={handlePlaySong}
+                />
+              ) : (
+                <p>Chưa có xử lý</p>
+              )}
             </div>
           </div>
         </div>

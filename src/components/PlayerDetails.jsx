@@ -7,19 +7,20 @@ const PlayerDetails = (props) => {
     status: false,
     data: [...data1],
   };
-
   return (
     <Fragment>
       <div className="scroll">
         <div className="scroll-bar">
           <div className="player-queue__list">
-            {songs.map((item, id) => (
+            {songs?.map((item, id) => (
               <div index={item.id} data-index={item.id} key={item.id}>
                 <div
                   className={clsx(
                     `player-queue__list__item`,
                     `${
-                      idSong === item.id && idSong === song.id ? "active" : ""
+                      idSong === Number(item.id) && idSong === Number(song?.id)
+                        ? "active"
+                        : ""
                     }`
                   )}
                   key={id}
@@ -29,21 +30,15 @@ const PlayerDetails = (props) => {
                     <div className="player-queue__list__item__content__left">
                       <div className="song-thumb">
                         <figure>
-                          <img
-                            src={
-                              item.links.images[0].url
-                                ? item.links.images[0].url
-                                : item.links.images[1].url
-                            }
-                          />
+                          <img src={item?.image} alt={song?.name} />
                         </figure>
                         <div className="opacity"></div>
                       </div>
                       <div className="card-info">
                         <div className="card-info__title">
-                          <span>{item.name}</span>
+                          <span>{item?.name}</span>
                         </div>
-                        <h3 className="card-info__singer">{item.author}</h3>
+                        <h3 className="card-info__singer">{item?.author}</h3>
                       </div>
                     </div>
                     <div className="player-queue__list__item__content__right">

@@ -1,8 +1,8 @@
-@keyframes rotation {
+@keyframes blur {
   from {
-    transform: rotate(0deg);
+    opacity: 0;
   }
   to {
-    transform: rotate(359deg);
+    opacity: 1;
   }
 }

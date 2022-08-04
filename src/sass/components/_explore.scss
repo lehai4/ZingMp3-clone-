@@ -1,0 +1,21 @@
+.wrapper-explore {
+  padding-top: 20px !important;
+}
+.gallery:hover .image-gallery-left-nav,
+.gallery:hover .image-gallery-right-nav {
+  display: block;
+}
+
+.image-gallery-left-nav .image-gallery-svg,
+.image-gallery-right-nav .image-gallery-svg {
+  height: 60px;
+  width: 60px;
+}
+.image-gallery-left-nav,
+.image-gallery-right-nav {
+  display: none;
+}
+.image-gallery-play-button,
+.image-gallery-fullscreen-button {
+  display: none;
+}

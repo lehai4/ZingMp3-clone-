@@ -1,15 +1,27 @@
+import { useState } from "react";
+import clsx from "clsx";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faPlay,
   faPlus,
   faAngleRight,
 } from "@fortawesome/free-solid-svg-icons";
-import { ReferIcon, playlist, data1 } from "../common";
-
+import { playlist } from "../common";
+import ReferPlayLists from "../components/ReferPlaylists";
+const navBar = [
+  { id: 0, title: "Bài hát", path: "/songs" },
+  { id: 1, title: "podcast", path: "/podcast" },
+  { id: 2, title: "album", path: "/album" },
+  { id: 3, title: "mv", path: "/mv" },
+];
 const MySelf = () => {
-  const obj = { data: [...data1] };
+  const [active, setActive] = useState(0);
+  const handleActive = (e, id) => {
+    setActive(id);
+    e.preventDefault();
+  };
   return (
-    <div className="zm-my-music">
+    <div className="zm-main">
       <div className="wrapper">
         <div className="wrapper-header">
           <div className="text">Thư viện</div>
@@ -32,39 +44,28 @@ const MySelf = () => {
           </h3>
           <div className="content-playlist">
             {playlist.map((item, i) => (
-              <div
-                className={`item-playlist item-playlist-${item.id}`}
-                data-target={item.id}
-                key={i}
-              >
-                <div className="zm-card-img">
-                  <div className="card-hover">
-                    <div className="card-hover__content">
-                      <div className="hover_lr">
-                        <ReferIcon {...obj} />
-                      </div>
-                      <div className="hover__between">
-                        <button className="zm-btn button">
-                          <FontAwesomeIcon
-                            icon={faPlay}
-                            className="icon"
-                            title={item.title}
-                          />
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                  <figure className="item-playlist__img">
-                    <img src={item.imageUrl} alt="" />
-                  </figure>
-                </div>
-                <div className="content">
-                  <span className="title">{item.title}</span>
-                  <span className="subtitle">{item.subtitle}</span>
-                </div>
-              </div>
+              <ReferPlayLists item={item} key={i} />
             ))}
           </div>
+        </div>
+        <div className="wrapper-bottom">
+          <nav className="zm-navbar">
+            <ul className="zm-navbar__menu">
+              {navBar.map((nav) => (
+                <li className="zm-navbar__item" key={nav.id}>
+                  <div
+                    className={clsx(
+                      `navbar-link`,
+                      `${active === nav.id ? "active" : ""}`
+                    )}
+                    onClick={() => handleActive(nav.id)}
+                  >
+                    <a href={nav.path}>{nav.title}</a>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </nav>
         </div>
       </div>
     </div>

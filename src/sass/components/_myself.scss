@@ -1,11 +1,4 @@
-.zm-my-music {
-  min-height: calc(100% - $header-height);
-  margin-top: $header-height;
-}
-.wrapper {
-  padding-top: $header-height;
-  position: relative;
-}
+//
 .wrapper-header {
   display: flex;
   align-items: center;
@@ -29,6 +22,7 @@
     }
   }
 }
+//
 .wrapper-content {
   margin-top: calc($header-height - 30px);
   .content-title {
@@ -79,6 +73,7 @@
       }
       .content {
         width: 224px;
+        opacity: 0.8;
         .title {
           font-size: 14px;
           font-weight: 500;
@@ -99,6 +94,9 @@
     }
     .zm-card-img {
       position: relative;
+      &:hover .card-hover {
+        display: block;
+      }
     }
     .item-playlist__img {
       border-radius: 5px;
@@ -113,6 +111,9 @@
   inset: 0;
   background: rgba(0, 0, 0, 0.3);
   display: none;
+  border-radius: 5px;
+  animation: blur linear 0.3s;
+  transition: all 0.3s;
   &__content {
     color: $txt-white;
     top: 50%;
@@ -139,7 +140,65 @@
     }
   }
 }
-.zm-card-img:hover .card-hover {
-  display: block;
-  border-radius: 5px;
+//
+.wrapper-bottom {
+  min-height: calc(100vh - 70px);
+  .zm-navbar {
+    margin: 30px 0;
+    display: flex;
+    align-items: center;
+    min-height: 52px;
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 1px;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.07);
+    }
+    &__menu {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      font-size: 14px;
+      font-weight: 500;
+    }
+    .zm-navbar__item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-transform: uppercase;
+      position: relative;
+      color: $text-primary;
+      margin: 0 40px 0 0;
+      line-height: normal;
+      &::before {
+        position: absolute;
+        content: "";
+        bottom: 0;
+        left: 0;
+        height: 2px;
+        width: 0;
+        background: $purple-primary;
+      }
+      &:hover::before {
+        width: 100%;
+      }
+      .navbar-link a {
+        display: block;
+        padding: 15px 0;
+      }
+      .active::before {
+        position: absolute;
+        content: "";
+        bottom: 0;
+        left: 0;
+        height: 2px;
+        width: 100%;
+        background: $purple-primary;
+      }
+    }
+  }
 }
