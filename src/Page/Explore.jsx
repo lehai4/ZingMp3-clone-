@@ -1,48 +1,58 @@
-import { useState, useEffect } from "react";
-import ImageGallery from "react-image-gallery";
-import axios from "axios";
+import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faAngleRight } from "@fortawesome/free-solid-svg-icons";
+
+import {
+  ReferPlayLists,
+  playlist2,
+  playlist3,
+  SliderCarousel,
+} from "../common";
 const Explore = () => {
-  const [images, setImages] = useState(null);
-
-  useEffect(() => {
-    let shouldCancel = false;
-
-    const call = async () => {
-      const response = await axios.get(
-        "https://google-photos-album-demo2.glitch.me/4eXXxxG3rYwQVf948"
-      );
-      if (!shouldCancel && response.data && response.data.length > 0) {
-        setImages(
-          response.data.map((url) => ({
-            original: `${url}=w1048`,
-            thumbnail: `${url}=w100`,
-          }))
-        );
-      }
-    };
-    call();
-    return () => (shouldCancel = true);
-  }, []);
-  // const image = [
-  //   {
-  //     original:
-  //       "https://photo-zmp3.zmdcdn.me/banner/2/3/e/c/23ec7d8f7f30f5971febc3d474f24747.jpg",
-  //   },
-  //   {
-  //     original:
-  //       "https://photo-zmp3.zmdcdn.me/banner/2/a/8/d/2a8d0186475844d3576ee4bd27d30c13.jpg",
-  //   },
-  //   {
-  //     original:
-  //       "https://photo-zmp3.zmdcdn.me/banner/1/2/c/9/12c98072d52ce4ff035019f3ff080e7c.jpg",
-  //   },
-  // ];
   return (
     <div className="zm-main">
-      <div className="wrapper-explore wrapper">
-        <div className="gallery">
-          {/* <ImageGallery items={image} autoPlay={true} /> */}
-          {images ? <ImageGallery items={images} /> : null}
+      <div className="scroll">
+        <div className="scroll-bar">
+          <div className="wrapper-explore wrapper">
+            <div className="slider-carousel">
+              <SliderCarousel />
+            </div>
+            <div className="wrapper-content">
+              <h3 className="content-title">
+                <div style={{ display: "flex", alignIitems: "center" }}>
+                  Gần Đây
+                </div>
+              </h3>
+              <div className="content-playlist">
+                {playlist2.map((item, i) => (
+                  <ReferPlayLists item={item} key={i} />
+                ))}
+              </div>
+            </div>
+            <div className="wrapper-content">
+              <h3 className="content-title">
+                <div style={{ display: "flex", alignIitems: "center" }}>
+                  Mới Phát Hành
+                </div>
+                <a href="/allPlayList" className="more">
+                  Tất cả
+                  <FontAwesomeIcon icon={faAngleRight} className="icon" />
+                </a>
+              </h3>
+            </div>
+            <div className="wrapper-content">
+              <h3 className="content-title">
+                <div style={{ display: "flex", alignIitems: "center" }}>
+                  Lựa chọn hôm nay
+                </div>
+              </h3>
+              <div className="content-playlist">
+                {playlist3.map((item, i) => (
+                  <ReferPlayLists item={item} key={i} />
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

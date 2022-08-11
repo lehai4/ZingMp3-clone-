@@ -16,10 +16,10 @@ function App() {
       .then((res) => setDataSongs(res.data))
       .catch((err) => console.log(err));
   }, []);
+
   useEffect(() => {
     setSong(dataSongs[0]);
   }, [dataSongs]);
-  console.log(dataSongs);
   return (
     <GlobalStyle>
       <ToastContainer

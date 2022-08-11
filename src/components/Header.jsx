@@ -1,10 +1,9 @@
-import { Fragment, useState } from "react";
+import { Fragment } from "react";
 import Tippy from "@tippyjs/react";
 import "tippy.js/dist/tippy.css";
 import { fakeIconHeaderRight, fakeIconHeaderLeft } from "../common";
 const Header = () => {
-  // const [value, setValue] = useState("");
-  const [user, setUser] = useState(undefined);
+  let user = undefined;
   return (
     <Fragment>
       <header className="header zm-header" id="header">
@@ -23,7 +22,6 @@ const Header = () => {
                 <input
                   type="text"
                   placeholder="Nhập tên bài hát, nghệ sĩ hoặc MV..."
-                  // onChange={(e) => setValue(e.target.value)}
                 />
               </div>
             </div>

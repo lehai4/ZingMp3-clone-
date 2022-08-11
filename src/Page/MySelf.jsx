@@ -6,8 +6,8 @@ import {
   faPlus,
   faAngleRight,
 } from "@fortawesome/free-solid-svg-icons";
+import { ReferPlayLists } from "../common";
 import { playlist } from "../common";
-import ReferPlayLists from "../components/ReferPlaylists";
 const navBar = [
   { id: 0, title: "Bài hát", path: "/songs" },
   { id: 1, title: "podcast", path: "/podcast" },
@@ -37,7 +37,7 @@ const MySelf = () => {
                 <FontAwesomeIcon icon={faPlus} className="icon" />
               </button>
             </div>
-            <a href="tmp" className="more">
+            <a href="/allPlayList" className="more">
               Tất cả
               <FontAwesomeIcon icon={faAngleRight} className="icon" />
             </a>

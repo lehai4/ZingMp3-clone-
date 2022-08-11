@@ -35,7 +35,7 @@ const ReferPlayLists = (props) => {
         </div>
         <div className="content">
           <span className="title">{item.title}</span>
-          <span className="subtitle">{item.subtitle}</span>
+          {item.subtitle && <span className="subtitle">{item.subtitle}</span>}
         </div>
       </div>
     </React.Fragment>

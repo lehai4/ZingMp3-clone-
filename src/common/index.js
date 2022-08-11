@@ -7,6 +7,8 @@ export { default as AddPlayList } from "../components/AddPlayList";
 export { default as Player } from "../components/Player";
 export { default as PlayerControls } from "../components/PlayerControls";
 export { default as ReferIcon } from "../components/ReferIcon";
+export { default as ReferPlayLists } from "../components/ReferPlaylists";
+export { default as SliderCarousel } from "../components/SliderCarousel";
 export {
   default as Section,
   SectionBody,
@@ -15,7 +17,7 @@ export {
 export { default as Router } from "../Routes/Router";
 export { default as MySelf } from "../Page/MySelf";
 export { default as Explore } from "../Page/Explore";
-export { playlist } from "../MockApi/playlist";
+export { playlist, playlist2, playlist3 } from "../MockApi/playlist";
 export { data1, data2 } from "../MockApi/FakeShare";
 export { fakeIconMusicBar } from "../MockApi/FakeIconMusicBar";
 export {

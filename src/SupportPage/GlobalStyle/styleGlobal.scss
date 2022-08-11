@@ -1,3 +1,5 @@
+$header-height: 70px;
+$player-height: 90px;
 .zm-btn {
   font-size: 14px;
   border-radius: 999px;
@@ -99,5 +101,6 @@
 }
 .wrapper {
   padding-top: 70px;
+  min-height: calc(100% - $header-height - $player-height);
   position: relative;
 }
