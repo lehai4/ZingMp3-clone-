@@ -65,7 +65,7 @@
 
 // icon playlist
 .zm-tooltip-btn .icon {
-  font-size: 16px;
+  font-size: 20px;
   padding: 5px;
   border-radius: 50%;
 }
@@ -81,6 +81,7 @@
   z-index: 2;
   width: 100%;
   bottom: 0;
+  left: 0;
   user-select: none;
   cursor: pointer;
   background-color: $layout-bg;

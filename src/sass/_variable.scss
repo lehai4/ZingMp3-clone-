@@ -1,5 +1,6 @@
 $main-color: #f9dbdb;
 $layout-bg: #f9dbdb;
+$bg-color: rgba(0, 0, 0, 0.1);
 $text-primary: #32323d;
 $border-primary: 1px solid rgba(0, 0, 0, 0.1);
 $text-secondary: hsl(0, 0%, 41%);
@@ -24,7 +25,7 @@ $player-queue-width: 330px;
 $navbar-width: 240px;
 $padding-section: 59px;
 $alpha-bg: rgba(0, 0, 0, 0.05);
-
+$sticky-header-box-shadow: rgba(0, 0, 0, 0.08);
 $mobile-width: 600px;
 $tablet-width: 1024px;
 

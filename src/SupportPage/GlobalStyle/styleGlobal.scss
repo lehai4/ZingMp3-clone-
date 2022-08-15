@@ -1,5 +1,8 @@
+// variable support
 $header-height: 70px;
 $player-height: 90px;
+$padding-section: 59px;
+//refer chung
 .zm-btn {
   font-size: 14px;
   border-radius: 999px;
@@ -11,14 +14,7 @@ $player-height: 90px;
   text-align: center;
   cursor: pointer;
 }
-.is-medium {
-  font-size: 14px;
-  padding: 9px 24px;
-}
-.zm-navbar-main {
-  position: relative;
-  margin-bottom: 15px;
-}
+
 .icon {
   line-height: 66%;
   opacity: 0.8;
@@ -37,6 +33,18 @@ $player-height: 90px;
   top: 0;
   opacity: 0.1;
 }
+.zm-card {
+  max-width: 100%;
+  position: relative;
+}
+.zm-card-img {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
 .scroll {
   position: relative;
   overflow: hidden;
@@ -47,7 +55,19 @@ $player-height: 90px;
   position: absolute;
   inset: 0;
   overflow: hidden scroll;
-  margin: 10px -6px 0 0;
+  margin: 10px 1px 0 0;
+
+  &::-webkit-scrollbar-thumb {
+    display: none;
+  }
+  &:hover::-webkit-scrollbar-thumb {
+    display: block;
+    opacity: 0.5;
+    background-color: rgba(0, 0, 0, 0.01);
+  }
+}
+.scroll-refer {
+  margin-top: 70px !important;
 }
 /* MusicBar */
 .level {
@@ -85,22 +105,54 @@ $player-height: 90px;
   align-items: center;
   justify-content: flex-end;
 }
-.opacity {
-  width: 100%;
-  height: 100%;
+
+//card hover
+.card-hover {
   position: absolute;
-  top: 0;
-  left: 0;
-  background-color: rgba(0, 0, 0, 0.5);
-  visibility: hidden;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3);
+  display: none;
+  border-radius: 5px;
+  animation: blur linear 0.3s;
+  transition: all 0.3s;
+  &__content {
+    color: #fff;
+    top: 50%;
+    position: relative;
+    transform: translateY(-50%);
+  }
+  .hover_lr > .level > .level-item:first-child {
+    color: #ea7aa0;
+  }
+  .hover__between {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%);
+    &::before {
+      content: "";
+      position: absolute;
+      border: 1px solid;
+      border-radius: 50%;
+      height: 30px;
+      width: 30px;
+      left: 40%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+  .fill {
+    font-size: 20px;
+  }
 }
 //main
 .zm-main {
-  min-height: calc(100% - 70px);
+  min-height: 100vh;
   margin-top: 70px;
+  padding: 0 $padding-section;
 }
 .wrapper {
-  padding-top: 70px;
   min-height: calc(100% - $header-height - $player-height);
+  padding-top: 70px;
   position: relative;
 }

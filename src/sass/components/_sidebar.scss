@@ -1,7 +1,7 @@
 // sideBar
 .zm-sidebar {
   height: calc(100vh - 90px);
-  position: fixed;
+  position: relative;
   z-index: 100;
   width: $sidebar-width;
   background-color: $sidebar-bg;

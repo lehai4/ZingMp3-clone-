@@ -32,7 +32,6 @@ const PlayerDetails = (props) => {
                         <figure>
                           <img src={item?.image} alt={song?.name} />
                         </figure>
-                        <div className="opacity"></div>
                       </div>
                       <div className="card-info">
                         <div className="card-info__title">

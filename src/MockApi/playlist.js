@@ -72,7 +72,7 @@ export const playlist3 = [
       },
       {
         key: "Thứ 6",
-        img: "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_webp/cover/a/7/8/a/a78a7189336fbe5902679e0ef6553ad1.jpg",
+        img: "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_png/cover/b/5/2/3/b5237d79d8575621988d7276b7c75c82.png",
       },
       {
         key: "Thứ 7",
@@ -115,4 +115,100 @@ export const playlist3 = [
     subtitle: "Nhạc Hoa lời Việt được chia sẻ nhiều nhất trên mạng xã hội",
   },
 ];
-export const playlist4 = [];
+
+export const playlist4 = [
+  {
+    id: 0,
+    imageUrl:
+      "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_webp/cover/0/8/d/e/08de33b124ffd44c460aa690e10757b0.jpg",
+    title: "V-Pop Tháng 8/2022",
+    subtitle: "Only C, Phương Ly, Hoàng Thùy Linh, Chi Pu 14k người yêu thích",
+  },
+  {
+    id: 1,
+    imageUrl:
+      "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_webp/cover/5/6/1/6/56163bff3f91cc7041b5263fc35b162b.jpg",
+    title: "US-UK Tháng 8/2022",
+    subtitle:
+      "Beyoncé, Calvin Harris, Bille Eilish, Hailee Steinfeld 1K người yêu thích",
+  },
+  {
+    id: 2,
+    imageUrl:
+      "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_webp/cover/f/0/8/6/f086cbe2316120f862d69af673f60c64.jpg",
+    title: "K-Pop Tháng 8/2022",
+    subtitle: "ATEEZ, SNSD, STAYC, NewJeans 6K người yêu thích",
+  },
+  {
+    id: 3,
+    imageUrl:
+      "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_webp/cover/d/a/c/6/dac6ee3d54dd0110420493663eaf9ec8.jpg",
+    title: "C-Pop Tháng 8/2022",
+    subtitle:
+      "Thái Từ Khôn, INTO1, 傅夢彤 / Phó Mộng Đồng, SNH48 5K người yêu thích",
+  },
+  {
+    id: 4,
+    imageUrl:
+      "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_webp/cover/0/9/f/8/09f887e077bd9883f61661fb8f1f93b7.jpg",
+    title: "Indie Việt Tháng 8/2022",
+    subtitle: "Trang, T.R.I, buitruonglinh, Kim Chi Sun 7K người yêu thích",
+  },
+];
+export const artistFavourite = [
+  {
+    id: 0,
+    artist: "Miu Lê",
+    imgageMain:
+      "https://photo-resize-zmp3.zmdcdn.me/w480_r2x3_webp/cover_artist/e/6/7/3/e673c802cb21e58c5eb25ac53638ca9f.jpg",
+    imageArr: [
+      "https://photo-resize-zmp3.zmdcdn.me/w94_r1x1_webp/cover/1/b/8/9/1b8958017b04a663eb8c093905dd4d85.jpg",
+      "https://photo-resize-zmp3.zmdcdn.me/w94_r1x1_webp/cover/0/d/5/f/0d5fd64189282d2411ca939024f7047e.jpg",
+      "https://photo-resize-zmp3.zmdcdn.me/w94_r1x1_webp/cover/d/5/8/a/d58aa48a38c0a8dc89c95277b456bc75.jpg",
+    ],
+  },
+  {
+    id: 1,
+    artist: "Mr. Siro",
+    imgageMain:
+      "https://photo-resize-zmp3.zmdcdn.me/w480_r2x3_webp/cover_artist/3/5/a/d/35ad281a468d21a2d0ad5a8d96c62f23.jpg",
+    imageArr: [
+      "https://photo-resize-zmp3.zmdcdn.me/w94_r1x1_webp/cover/4/d/6/2/4d62b014dddf2702af85e1d14d5c0a0b.jpg",
+      "https://photo-resize-zmp3.zmdcdn.me/w94_r1x1_webp/cover/f/1/c/0/f1c06ed70e6be6be9572d99daf5ecc53.jpg",
+      "https://photo-resize-zmp3.zmdcdn.me/w94_r1x1_webp/cover/a/c/7/3/ac735f3acd59d62b611d9b0712a4ff75.jpg",
+    ],
+  },
+  {
+    id: 2,
+    artist: "Chi Dân",
+    imgageMain:
+      "https://photo-resize-zmp3.zmdcdn.me/w480_r2x3_webp/cover_artist/6/2/8/4/62846a767a65588f0324fa06069c97b0.jpg",
+    imageArr: [
+      "https://photo-resize-zmp3.zmdcdn.me/w94_r1x1_webp/cover/2/9/1/b/291b5a81f266d588cf4344766676a140.jpg",
+      "https://photo-resize-zmp3.zmdcdn.me/w94_r1x1_webp/covers/0/8/08a11249f52a266fb8a8b6802650d017_1408435289.jpg",
+      "https://photo-resize-zmp3.zmdcdn.me/w94_r1x1_webp/avatars/0/5/054188d065af18577d13b30eaaa0bb4d_1464761489.jpg",
+    ],
+  },
+  {
+    id: 3,
+    artist: "Isaac",
+    imgageMain:
+      "https://photo-resize-zmp3.zmdcdn.me/w480_r2x3_webp/cover_artist/a/0/b/6/a0b603906665569159b95bd1bfb745a1.jpg",
+    imageArr: [
+      "https://photo-resize-zmp3.zmdcdn.me/w94_r1x1_webp/cover/a/e/d/3/aed3bab799b99eeab7d12e558981a72b.jpg",
+      "https://photo-resize-zmp3.zmdcdn.me/w94_r1x1_webp/cover/4/b/1/0/4b10ee0f2a43abcd1ecfbbd79b8eefc9.jpg",
+      "https://photo-resize-zmp3.zmdcdn.me/w94_r1x1_webp/cover/0/d/b/f/0dbf4766d1b8d41681d0ceab03510a31.jpg",
+    ],
+  },
+  {
+    id: 4,
+    artist: "Tóc Tiên",
+    imgageMain:
+      "https://photo-resize-zmp3.zmdcdn.me/w480_r2x3_webp/cover_artist/1/e/e/6/1ee643010b10538fdb05787b21014e7a.jpg",
+    imageArr: [
+      "https://photo-resize-zmp3.zmdcdn.me/w94_r1x1_webp/cover/c/0/7/c/c07c3ae64b05904e2e3c1cf274cced69.jpg",
+      "https://photo-resize-zmp3.zmdcdn.me/w94_r1x1_webp/cover/a/c/4/c/ac4c90ddaddc5fcf6c565d59400e7f7c.jpg",
+      "https://photo-resize-zmp3.zmdcdn.me/w94_r1x1_webp/cover/9/0/3/6/90368c6fa9dfb60ecd2a3ce1fd474696.jpg",
+    ],
+  },
+];

@@ -82,11 +82,15 @@ a:hover {
 .active {
   color: $link-text-hover !important;
 }
+
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 4px;
 }
+
 ::-webkit-scrollbar-thumb {
-  background: rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
 @each $val in $numbers {
@@ -111,12 +115,20 @@ a:hover {
 .grid {
   display: grid;
 }
+.canvas {
+  background: $main-color;
+  overflow: hidden;
+  object-fit: cover;
+}
+.zm-layout {
+  background-size: 1920px auto;
+  background-repeat: repeat;
+}
 .container {
   position: relative;
+  flex-grow: 1;
   width: 100%;
   max-width: calc(100% - $sidebar-width - $player-queue-width);
-  margin-left: 240px;
-  padding: 0 $padding-section;
   @include tablet {
     padding: 0 20px;
   }
@@ -124,13 +136,7 @@ a:hover {
     padding: 0 10px;
   }
 }
-.main {
-  min-height: 100vh;
-  overflow: hidden;
-  @include tablet {
-    margin-top: calc(#{$header-tablet-height} + 20px);
-  }
-  @include mobile {
-    margin-top: calc(#{$header-mobile-height} + 10px);
-  }
+.zm-layout {
+  width: 100%;
+  display: flex;
 }

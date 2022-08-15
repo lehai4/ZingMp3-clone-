@@ -19,10 +19,10 @@ const ReferPlayLists = (props) => {
                 <ReferIcon {...obj} />
               </div>
               <div className="hover__between">
-                <button className="zm-btn button">
+                <button className="zm-btn">
                   <FontAwesomeIcon
                     icon={faPlay}
-                    className="icon"
+                    className="icon fill"
                     title={item.title}
                   />
                 </button>

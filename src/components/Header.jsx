@@ -2,11 +2,12 @@ import { Fragment } from "react";
 import Tippy from "@tippyjs/react";
 import "tippy.js/dist/tippy.css";
 import { fakeIconHeaderRight, fakeIconHeaderLeft } from "../common";
-const Header = () => {
-  let user = undefined;
+const Header = (props) => {
+  const user = undefined;
+
   return (
     <Fragment>
-      <header className="header zm-header" id="header">
+      <header className="header zm-header">
         <div className="header__main">
           <div className="header__main__left">
             {fakeIconHeaderLeft.map((item) => (

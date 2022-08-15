@@ -20,6 +20,7 @@ function App() {
   useEffect(() => {
     setSong(dataSongs[0]);
   }, [dataSongs]);
+
   return (
     <GlobalStyle>
       <ToastContainer
@@ -33,13 +34,19 @@ function App() {
         draggable
         pauseOnHover
       />
-      <div className="canvas zm-layout">
+      <div
+        className="canvas zm-layout"
+        style={{
+          backgroundImage:
+            "url(https://zmp3-static.zadn.vn/skins/zmp3-v6.1/images/theme-background/tet-co-truyen.jpg)",
+        }}
+      >
         <Header />
-        <SideBar />
+        <aside>
+          <SideBar />
+        </aside>
         <div className="container">
-          <main className="main">
-            <Router />
-          </main>
+          <Router />
         </div>
         <Player dataSongs={dataSongs} song={song} setSong={setSong} />
       </div>

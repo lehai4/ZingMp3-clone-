@@ -1,3 +1,9 @@
+.zm-header.is-sticky {
+  background-color: $layout-bg;
+  background-size: cover;
+  background-repeat: no-repeat;
+  box-shadow: 0 3px 5px $sticky-header-box-shadow;
+}
 .header {
   position: fixed;
   align-items: center;
@@ -8,6 +14,7 @@
   z-index: 999;
   min-width: 660px;
   padding: 0 $padding-section;
+
   @include header {
     right: $player-queue-width;
   }
