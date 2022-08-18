@@ -120,6 +120,7 @@ $padding-section: 59px;
     top: 50%;
     position: relative;
     transform: translateY(-50%);
+    z-index: 1;
   }
   .hover_lr > .level > .level-item:first-child {
     color: #ea7aa0;

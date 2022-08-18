@@ -8,7 +8,7 @@ function App() {
   useEffect(() => {
     async function getData() {
       const res = await axios.get(
-        `https://62eb40ae705264f263d58770.mockapi.io/api/v1/zingmp3/songs`
+        `https://songmusic-api.herokuapp.com/api/songs`
       );
       return res;
     }
@@ -20,7 +20,6 @@ function App() {
   useEffect(() => {
     setSong(dataSongs[0]);
   }, [dataSongs]);
-
   return (
     <GlobalStyle>
       <ToastContainer

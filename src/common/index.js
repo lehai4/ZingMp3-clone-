@@ -18,13 +18,6 @@ export {
 export { default as Router } from "../Routes/Router";
 export { default as MySelf } from "../Page/MySelf";
 export { default as Explore } from "../Page/Explore";
-export {
-  playlist,
-  playlist2,
-  playlist3,
-  playlist4,
-  artistFavourite,
-} from "../MockApi/playlist";
 export { data1, data2 } from "../MockApi/FakeShare";
 export { fakeIconMusicBar } from "../MockApi/FakeIconMusicBar";
 export {
@@ -35,3 +28,10 @@ export {
   FakeIconList,
   FakeOptionMucsicList,
 } from "../MockApi/FakeIconList";
+export {
+  playlist,
+  playlist2,
+  playlist3,
+  playlist4,
+  artistFavourite,
+} from "../MockApi/playlist";

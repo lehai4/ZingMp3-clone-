@@ -37,9 +37,6 @@ img {
 :focus {
   outline: 0;
 }
-del {
-  text-decoration: line-through;
-}
 table {
   border-collapse: collapse;
   border-spacing: 0;
@@ -65,7 +62,6 @@ h6 {
 }
 button,
 input,
-optgroup,
 select,
 textarea {
   padding: 0;
@@ -75,14 +71,13 @@ textarea {
   background-color: transparent;
   word-break: normal;
 }
-
-a:hover {
+button:hover {
+  opacity: 0.8;
+}
+a:hover,
+.active {
   color: $link-text-hover;
 }
-.active {
-  color: $link-text-hover !important;
-}
-
 ::-webkit-scrollbar {
   width: 4px;
 }
@@ -121,6 +116,8 @@ a:hover {
   object-fit: cover;
 }
 .zm-layout {
+  width: 100%;
+  display: flex;
   background-size: 1920px auto;
   background-repeat: repeat;
 }
@@ -135,8 +132,4 @@ a:hover {
   @include mobile {
     padding: 0 10px;
   }
-}
-.zm-layout {
-  width: 100%;
-  display: flex;
 }

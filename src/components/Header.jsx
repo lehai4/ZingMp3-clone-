@@ -1,22 +1,30 @@
 import { Fragment } from "react";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import Tippy from "@tippyjs/react";
 import "tippy.js/dist/tippy.css";
 import { fakeIconHeaderRight, fakeIconHeaderLeft } from "../common";
-const Header = (props) => {
+const Header = () => {
   const user = undefined;
-
+  const handleIconHeader = () => {
+    toast.error("Xin lỗi chức năng chưa cập nhật!");
+  };
   return (
     <Fragment>
       <header className="header zm-header">
         <div className="header__main">
           <div className="header__main__left">
             {fakeIconHeaderLeft.map((item) => (
-              <button className="zm-btn arrow-btn" key={item.id}>
+              <button
+                className="zm-btn arrow-btn"
+                key={item.id}
+                onClick={handleIconHeader}
+              >
                 <i className={`icon ${item.name}`}></i>
               </button>
             ))}
             <div className="header__main__left__search">
-              <button className="zm-btn btn-search">
+              <button className="zm-btn btn-search" onClick={handleIconHeader}>
                 <i className="icon bx bx-search"></i>
               </button>
               <div className="header__main__left__search__input">
@@ -30,9 +38,15 @@ const Header = (props) => {
           <div className="header__main__right">
             {fakeIconHeaderRight.map((item, i) => (
               <div className="setting-item" key={i}>
-                <Tippy content={item.title}>
-                  <i className={`icon ${item.icon} `}></i>
-                </Tippy>
+                <button
+                  className="zm-btn"
+                  key={item.id}
+                  onClick={handleIconHeader}
+                >
+                  <Tippy content={item.title}>
+                    <i className={`icon ${item.icon} `}></i>
+                  </Tippy>
+                </button>
               </div>
             ))}
             <div className="login-container">

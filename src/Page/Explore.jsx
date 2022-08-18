@@ -53,7 +53,7 @@ const Explore = () => {
                   <FontAwesomeIcon icon={faAngleRight} className="icon" />
                 </a>
               </h3>
-              <div>
+              <div className="general-select">
                 <button className="zm-btn active">Bài hát</button>
                 <button className="zm-btn ">Album</button>
               </div>

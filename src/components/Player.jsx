@@ -19,7 +19,7 @@ const Player = (props) => {
   };
 
   const handleSetSong = (idSong) => {
-    let song = dataSongs.find((song) => Number(song.id) === idSong);
+    let song = dataSongs.find((song) => song.id === idSong);
     if (!song) {
       setSong(dataSongs[0]);
     } else {
@@ -27,17 +27,17 @@ const Player = (props) => {
     }
   };
   const handlePlaySong = (idSong) => {
-    setIdSong(Number(idSong));
-    handleSetSong(Number(idSong));
+    setIdSong(idSong);
+    handleSetSong(idSong);
   };
   const handleNextSong = () => {
-    handleSetSong(Number(song.id) + 1);
-    setIdSong(Number(song.id) + 1);
+    handleSetSong(song.id + 1);
+    setIdSong(song.id + 1);
   };
   const handlePrevSong = () => {
-    handleSetSong(Number(song.id) - 1);
+    handleSetSong(song.id - 1);
     if (idSong === 0) setIdSong(0);
-    else setIdSong(Number(song.id) - 1);
+    else setIdSong(song.id - 1);
   };
   const handleNext = (type = false) => {
     type === true ? handleNextSong() : (type = false);
@@ -92,6 +92,7 @@ const Player = (props) => {
             handleNext={handleNext}
             handleNextSong={handleNextSong}
             handlePrevSong={handlePrevSong}
+            autoPlay={false}
           />
         </div>
         <audio />
