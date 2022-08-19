@@ -81,7 +81,7 @@ const Player = (props) => {
                   handlePlaySong={handlePlaySong}
                 />
               ) : (
-                <p>Chưa có xử lý</p>
+                <span>Chưa handle</span>
               )}
             </div>
           </div>

@@ -14,7 +14,6 @@ $padding-section: 59px;
   text-align: center;
   cursor: pointer;
 }
-
 .icon {
   line-height: 66%;
   opacity: 0.8;
@@ -22,14 +21,13 @@ $padding-section: 59px;
 }
 .line {
   position: relative;
-  height: 1px;
+  width: 100%;
 }
 .line:after {
   content: "";
-  border-top: 1px solid #32323d;
+  border-top: 1px solid;
   position: absolute;
-  left: 25px;
-  right: 25px;
+  width: 100%;
   top: 0;
   opacity: 0.1;
 }
@@ -44,7 +42,6 @@ $padding-section: 59px;
   border-radius: 4px;
   flex-shrink: 0;
 }
-
 .scroll {
   position: relative;
   overflow: hidden;
@@ -69,7 +66,56 @@ $padding-section: 59px;
 .scroll-refer {
   margin-top: 70px !important;
 }
-/* MusicBar */
+
+.opacity {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  visibility: hidden;
+}
+
+.icon-hover {
+  position: absolute;
+  color: white;
+  display: none;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.media {
+  align-items: center;
+  display: flex;
+  text-align: left;
+  padding: 10px;
+  border-radius: 5px;
+}
+.media-left {
+  display: flex;
+  width: 50%;
+  margin-right: 10px;
+}
+.media-content {
+  flex-basis: auto;
+  flex-grow: 1;
+  flex-shrink: 1;
+  text-align: left;
+  align-self: center;
+  width: 0;
+}
+.media-right {
+  margin-left: 10px;
+}
+.media-left,
+.media-right {
+  flex-basis: auto;
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+
 .level {
   display: flex;
   align-items: center;
@@ -144,6 +190,25 @@ $padding-section: 59px;
   }
   .fill {
     font-size: 20px;
+  }
+}
+//btn refer
+
+.general-select {
+  margin-bottom: 20px;
+  .zm-btn {
+    padding: 4px 24px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 100px;
+    font-weight: 400;
+    font-size: 12px;
+    text-transform: uppercase;
+    margin-right: 15px;
+  }
+  .zm-btn.active {
+    border-color: #ea7aa0;
+    background-color: #ea7aa0;
+    color: #fff;
   }
 }
 //main

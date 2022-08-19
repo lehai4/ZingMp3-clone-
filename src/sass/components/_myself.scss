@@ -1,4 +1,3 @@
-//
 .wrapper-header {
   display: flex;
   align-items: center;
@@ -22,7 +21,7 @@
     }
   }
 }
-//
+
 .wrapper-content {
   margin-top: calc($header-height - 30px);
   .content-title {
@@ -33,7 +32,7 @@
     font-size: 20px;
     color: $text-primary;
     font-weight: 700;
-    text-transform: uppercase;
+    text-transform: capitalize;
     button {
       background: rgba(0, 0, 0, 0.07);
       margin-left: 8px;
@@ -63,6 +62,7 @@
       }
     }
   }
+
   .content-playlist {
     display: flex;
     .zm-card-img {
@@ -79,9 +79,8 @@
     }
   }
 }
-//
+
 .wrapper-bottom {
-  // min-height: calc(100vh - 70px);
   .zm-navbar {
     margin: 30px 0;
     display: flex;
@@ -140,4 +139,118 @@
       }
     }
   }
+  .zm-library-songs {
+    margin-left: -10px;
+    .select-header {
+      align-items: center;
+      display: flex;
+      text-align: left;
+      margin: 0 25px;
+      padding: 10px;
+      height: 46px;
+      &-left {
+        width: 50%;
+        margin-right: 10px;
+      }
+      &-middle {
+        flex-basis: auto;
+        flex-grow: 1;
+        flex-shrink: 1;
+        text-align: left;
+        align-self: center;
+        width: 0;
+      }
+      &-right {
+        flex-basis: auto;
+        flex-grow: 0;
+        flex-shrink: 0;
+        margin-left: 10px;
+      }
+    }
+    .list-select-songs {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      .item-song {
+        flex-grow: 1;
+        border-bottom: 1px solid $alpha-bg;
+        &:last-child {
+          border: none;
+        }
+        &:hover {
+          background-color: $alpha-bg;
+        }
+        &:hover .icon-hover {
+          display: block;
+        }
+        &:hover .opacity {
+          visibility: visible;
+        }
+      }
+      .media-left {
+        .song-prefix {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-size: 12px;
+          margin-right: 10px;
+          color: rgba(50, 50, 61, 0.5);
+          font-weight: 700;
+          .icon {
+            zoom: 0.1;
+            fill: rgba(0, 0, 0, 0.5);
+          }
+        }
+        .song-thumb {
+          margin-right: 10px;
+          flex-shrink: 0;
+          display: block;
+          position: relative;
+          overflow: hidden;
+          border-radius: 4px;
+          cursor: pointer;
+          .image {
+            width: 40px;
+            height: 40px;
+          }
+        }
+        .card-info {
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+          .song-title-item {
+            display: flex;
+            white-space: nowrap;
+            line-height: 0;
+            padding-right: 10px;
+            color: #525252;
+            .title {
+              font-size: 14px;
+              font-weight: 500;
+              line-height: 1.36;
+              text-overflow: clip;
+              overflow: visible;
+              display: flex;
+              align-items: center;
+            }
+          }
+          & > .subtitle {
+            display: inline-block;
+            color: #696969;
+            font-size: 12px;
+            margin-top: 3px;
+          }
+        }
+      }
+      .media-content > span {
+        font-size: 14px;
+        white-space: nowrap;
+        max-width: 100%;
+        color: rgba(50, 50, 61, 0.5);
+      }
+    }
+  }
+}
+.item-song:hover .opacity {
+  visibility: visible;
 }

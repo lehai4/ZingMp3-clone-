@@ -1,15 +1,17 @@
 import { useState, useRef, useEffect } from "react";
+import { UilMusic } from "@iconscout/react-unicons";
+
+import clsx from "clsx";
+import axios from "axios";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import clsx from "clsx";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faPlay,
   faPlus,
   faAngleRight,
 } from "@fortawesome/free-solid-svg-icons";
-import { ReferPlayLists } from "../common";
-import { playlist } from "../common";
+import { ReferPlayLists, playlist } from "../common";
 const navBar = [
   { id: 0, title: "Bài hát", path: "/songs" },
   { id: 1, title: "podcast", path: "/podcast" },
@@ -18,16 +20,26 @@ const navBar = [
 ];
 const MySelf = () => {
   const headerRef = useRef(null);
+  const [data, setData] = useState([]);
   const [active, setActive] = useState(0);
-  const handleActive = (e, id) => {
+  const handleActive = (id) => {
     setActive(id);
-    e.preventDefault();
   };
 
   const handleAddPlaylist = () => {
     toast.error("Xin lỗi chức năng chưa cập nhật!");
   };
-
+  useEffect(() => {
+    async function getData() {
+      const res = await axios.get(
+        `https://songmusic-api.herokuapp.com/api/songs`
+      );
+      return res;
+    }
+    getData()
+      .then((res) => setData(res.data))
+      .catch((err) => console.log(err));
+  }, []);
   useEffect(() => {
     let navHeader = headerRef.current;
     let backgroundHeader = document.querySelector(".zm-header");
@@ -39,6 +51,7 @@ const MySelf = () => {
       }
     });
   }, []);
+
   return (
     <div className="scroll">
       <div className="scroll-bar" style={{ marginTop: "0" }} ref={headerRef}>
@@ -52,7 +65,13 @@ const MySelf = () => {
             </div>
             <div className="wrapper-content">
               <h3 className="content-title">
-                <div style={{ display: "flex", alignIitems: "center" }}>
+                <div
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    textTransform: "uppercase",
+                  }}
+                >
                   Play list
                   <button className="zm-btn button" onClick={handleAddPlaylist}>
                     <FontAwesomeIcon icon={faPlus} className="icon" />
@@ -87,6 +106,56 @@ const MySelf = () => {
                   ))}
                 </ul>
               </nav>
+              <div className="general-select">
+                <button className="zm-btn active">Yêu thích</button>
+                <button className="zm-btn ">Đã tải lên</button>
+              </div>
+              <div className="zm-library-songs">
+                <div className="select-header">
+                  <div className="select-header-left">Bài hát</div>
+                  <div className="select-header-middle">Album</div>
+                  <div className="select-header-right">Thời gian</div>
+                </div>
+                <div className="list-select-songs">
+                  {data.map((data, i) => (
+                    <div className="item-song" data-target={`${i}`}>
+                      <div className="media">
+                        <div className="media-left">
+                          <div className="song-prefix">
+                            <UilMusic
+                              size="140"
+                              color="#61DAFB"
+                              className="icon"
+                            />
+                          </div>
+                          <div className="song-thumb">
+                            <figure className="image">
+                              <img src={data.image} alt={data.name} />
+                            </figure>
+                            <div className="opacity"></div>
+                            <div className="icon-hover">
+                              <FontAwesomeIcon icon={faPlay} className="icon" />
+                            </div>
+                          </div>
+                          <div className="card-info">
+                            <span className="song-title-item">
+                              <span className="item-title title">
+                                {data.name}
+                              </span>
+                            </span>
+                            <h3 className="subtitle">{data.author}</h3>
+                          </div>
+                        </div>
+                        <div className="media-content">
+                          <span>{data.album}</span>
+                        </div>
+                        <div className="media-right"></div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+                <div className="line"></div>
+              </div>
             </div>
           </div>
         </div>

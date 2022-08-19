@@ -1,5 +1,7 @@
 import { Fragment } from "react";
 import clsx from "clsx";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPlay } from "@fortawesome/free-solid-svg-icons";
 import { ReferIcon, data1 } from "../common";
 const PlayerDetails = (props) => {
   const { song, songs, idSong, handlePlaySong } = props;
@@ -18,9 +20,7 @@ const PlayerDetails = (props) => {
                   className={clsx(
                     `player-queue__list__item`,
                     `${
-                      idSong === Number(item.id) && idSong === Number(song?.id)
-                        ? "active"
-                        : ""
+                      idSong === item.id && idSong === song?.id ? "active" : ""
                     }`
                   )}
                   key={id}
@@ -32,6 +32,10 @@ const PlayerDetails = (props) => {
                         <figure>
                           <img src={item?.image} alt={song?.name} />
                         </figure>
+                        <div className="opacity"></div>
+                        <div className="icon-hover">
+                          <FontAwesomeIcon icon={faPlay} className="icon" />
+                        </div>
                       </div>
                       <div className="card-info">
                         <div className="card-info__title">

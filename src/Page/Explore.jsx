@@ -33,9 +33,7 @@ const Explore = () => {
             </div>
             <div className="wrapper-content">
               <h3 className="content-title">
-                <div style={{ display: "flex", alignIitems: "center" }}>
-                  Gần Đây
-                </div>
+                <span>Gần Đây</span>
               </h3>
               <div className="content-playlist">
                 {playlist2.map((item, i) => (
@@ -45,9 +43,8 @@ const Explore = () => {
             </div>
             <div className="wrapper-content">
               <h3 className="content-title">
-                <div style={{ display: "flex", alignIitems: "center" }}>
-                  Mới Phát Hành
-                </div>
+                <span>Mới Phát Hành</span>
+
                 <a href="/allPlayList" className="more">
                   Tất cả
                   <FontAwesomeIcon icon={faAngleRight} className="icon" />
@@ -60,9 +57,7 @@ const Explore = () => {
             </div>
             <div className="wrapper-content">
               <h3 className="content-title">
-                <div style={{ display: "flex", alignIitems: "center" }}>
-                  Lựa chọn hôm nay
-                </div>
+                <span>Lựa chọn hôm nay</span>
               </h3>
               <div className="content-playlist">
                 {playlist3.map((item, i) => (
@@ -72,9 +67,7 @@ const Explore = () => {
             </div>
             <div className="wrapper-content mix-section">
               <h3 className="content-title">
-                <div style={{ display: "flex", alignIitems: "center" }}>
-                  Nghệ sĩ yêu thích
-                </div>
+                <span>Nghệ sĩ yêu thích</span>
               </h3>
               <div className="content-playlist">
                 {artistFavourite.map((item, i) => (
@@ -84,9 +77,8 @@ const Explore = () => {
             </div>
             <div className="wrapper-content">
               <h3 className="content-title">
-                <div style={{ display: "flex", alignIitems: "center" }}>
-                  Nhạc mới mỗi ngày
-                </div>
+                <span></span>
+                Nhạc mới mỗi ngày
               </h3>
               <div className="content-playlist">
                 {playlist4.map((item, i) => (

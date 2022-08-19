@@ -71,8 +71,9 @@ textarea {
   background-color: transparent;
   word-break: normal;
 }
-button:hover {
-  opacity: 0.8;
+i:hover,
+svg:hover {
+  opacity: 0.7;
 }
 a:hover,
 .active {
