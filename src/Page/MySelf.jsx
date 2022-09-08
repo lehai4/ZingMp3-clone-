@@ -1,9 +1,8 @@
 import { useState, useRef, useEffect } from "react";
-import { UilMusic } from "@iconscout/react-unicons";
-
 import clsx from "clsx";
-import axios from "axios";
 import { toast } from "react-toastify";
+import { useSelector } from "react-redux";
+import { UilMusic } from "@iconscout/react-unicons";
 import "react-toastify/dist/ReactToastify.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -11,7 +10,8 @@ import {
   faPlus,
   faAngleRight,
 } from "@fortawesome/free-solid-svg-icons";
-import { ReferPlayLists, playlist } from "../common";
+import { ReferPlayLists, useFetch } from "../common";
+
 const navBar = [
   { id: 0, title: "Bài hát", path: "/songs" },
   { id: 1, title: "podcast", path: "/podcast" },
@@ -19,8 +19,12 @@ const navBar = [
   { id: 3, title: "mv", path: "/mv" },
 ];
 const MySelf = () => {
+  const playlist = useFetch(
+    "https://songmusic-api.herokuapp.com/api",
+    "/playlists"
+  );
+  const data = useSelector((state) => state.songs.songs);
   const headerRef = useRef(null);
-  const [data, setData] = useState([]);
   const [active, setActive] = useState(0);
   const handleActive = (id) => {
     setActive(id);
@@ -29,17 +33,7 @@ const MySelf = () => {
   const handleAddPlaylist = () => {
     toast.error("Xin lỗi chức năng chưa cập nhật!");
   };
-  useEffect(() => {
-    async function getData() {
-      const res = await axios.get(
-        `https://songmusic-api.herokuapp.com/api/songs`
-      );
-      return res;
-    }
-    getData()
-      .then((res) => setData(res.data))
-      .catch((err) => console.log(err));
-  }, []);
+
   useEffect(() => {
     let navHeader = headerRef.current;
     let backgroundHeader = document.querySelector(".zm-header");
@@ -51,7 +45,6 @@ const MySelf = () => {
       }
     });
   }, []);
-
   return (
     <div className="scroll">
       <div className="scroll-bar" style={{ marginTop: "0" }} ref={headerRef}>
@@ -83,7 +76,7 @@ const MySelf = () => {
                 </a>
               </h3>
               <div className="content-playlist">
-                {playlist.map((item, i) => (
+                {playlist?.data?.map((item, i) => (
                   <ReferPlayLists item={item} key={i} />
                 ))}
               </div>
@@ -118,7 +111,7 @@ const MySelf = () => {
                 </div>
                 <div className="list-select-songs">
                   {data.map((data, i) => (
-                    <div className="item-song" data-target={`${i}`}>
+                    <div className="item-song" data-target={`${i}`} key={i}>
                       <div className="media">
                         <div className="media-left">
                           <div className="song-prefix">

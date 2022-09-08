@@ -9,7 +9,6 @@
   }
   &__item {
     border-radius: 4px;
-    cursor: pointer;
     &:hover {
       background-color: rgba(0, 0, 0, 0.05);
     }
@@ -20,10 +19,8 @@
     &:hover .icon-hover {
       display: block;
     }
-    &:hover &__content__right .level-item:nth-child(1) .icon {
-      color: $text-item-hover;
-    }
-    &:hover span,
+
+    &:hover .card-info__title,
     &:hover .card-info__singer {
       max-width: $max-width-set;
     }
@@ -87,17 +84,13 @@
         display: none;
         .zm-btn {
           padding: 0;
-          color: $text-primary;
           margin: 0 4px;
         }
       }
     }
   }
 }
-.active.player-queue__list__item:hover
-  .player-queue__list__item__content__right
-  .level-item
-  .icon {
+.active .player-queue__list__item__content__right .icon {
   color: $txt-white;
 }
 .active .card-info__title {

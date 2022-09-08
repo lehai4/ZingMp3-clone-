@@ -35,6 +35,7 @@ const PlayerControls = (props) => {
           onClickNext={handleNextSong}
           onClickPrevious={handlePrevSong}
           autoPlayAfterSrcChange={true}
+          autoPlay={true}
           onEnded={() => handleNext(true)}
         />
       </div>

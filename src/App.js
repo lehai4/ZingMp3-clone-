@@ -1,10 +1,12 @@
-import { useState, useEffect } from "react";
-import { ToastContainer } from "react-toastify";
 import axios from "axios";
+import { useState, useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { ToastContainer } from "react-toastify";
+import { handleGetAllSong } from "./redux/songListSlide";
 import { GlobalStyle, Header, Player, SideBar, Router } from "./common";
 function App() {
+  const dispatch = useDispatch();
   const [dataSongs, setDataSongs] = useState([]);
-  const [song, setSong] = useState(undefined);
   useEffect(() => {
     async function getData() {
       const res = await axios.get(
@@ -18,8 +20,8 @@ function App() {
   }, []);
 
   useEffect(() => {
-    setSong(dataSongs[0]);
-  }, [dataSongs]);
+    dispatch(handleGetAllSong(dataSongs));
+  }, [dataSongs, dispatch]);
   return (
     <GlobalStyle>
       <ToastContainer
@@ -47,7 +49,7 @@ function App() {
         <div className="container">
           <Router />
         </div>
-        <Player dataSongs={dataSongs} song={song} setSong={setSong} />
+        <Player />
       </div>
     </GlobalStyle>
   );

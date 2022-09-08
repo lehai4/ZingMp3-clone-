@@ -35,3 +35,4 @@ export {
   playlist4,
   artistFavourite,
 } from "../MockApi/playlist";
+export { default as useFetch } from "../callApi/useFetchAPI";

@@ -1,5 +1,7 @@
-import { useState, useEffect } from "react";
 import clsx from "clsx";
+import { useState, useEffect } from "react";
+import { useSelector } from "react-redux";
+import storage from "../storage/storage";
 import {
   PlayerDetails,
   ReferIcon,
@@ -9,20 +11,20 @@ import {
   FakeOptionMucsicList,
   data2,
 } from "../common";
-
-const Player = (props) => {
-  const { dataSongs, song, setSong } = props;
-  const [idSong, setIdSong] = useState(0);
+const Player = () => {
+  const dataSongs = useSelector((state) => state.songs.songs);
+  const [song, setSong] = useState(storage.getSongCurrent());
+  const [idSong, setIdSong] = useState(storage.getSongCurrent().id);
   const [active, setActive] = useState(0);
   const obj = {
     data: [...data2],
   };
-
   const handleSetSong = (idSong) => {
     let song = dataSongs.find((song) => song.id === idSong);
     if (!song) {
-      setSong(dataSongs[0]);
+      storage.setSongCurrent(dataSongs[0]);
     } else {
+      storage.setSongCurrent(song);
       setSong(song);
     }
   };
@@ -45,7 +47,6 @@ const Player = (props) => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [dataSongs]);
-
   return (
     <Section>
       <SectionBody>

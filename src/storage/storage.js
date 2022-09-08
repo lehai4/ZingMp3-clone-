@@ -1,9 +1,9 @@
-const TODOS_STORAGE_KEY = "song";
+const TODOS_STORAGE_KEY = "songCurrent";
 export default {
-  get() {
+  getSongCurrent() {
     return JSON.parse(localStorage.getItem(TODOS_STORAGE_KEY)) || [];
   },
-  set(songNew) {
+  setSongCurrent(songNew) {
     localStorage.setItem(TODOS_STORAGE_KEY, JSON.stringify(songNew));
   },
 };

@@ -50,9 +50,6 @@
       display: flex;
       align-items: center;
       color: #696969;
-      &:hover {
-        color: $link-text-hover;
-      }
       .icon {
         font-size: 16px;
         top: 0;
@@ -66,16 +63,13 @@
   .content-playlist {
     display: flex;
     .zm-card-img {
-      position: relative;
       &:hover .card-hover {
         display: block;
       }
     }
     .item-playlist__img {
-      border-radius: 5px;
       width: 224px;
       padding-bottom: 100%;
-      overflow: hidden;
     }
   }
 }
@@ -119,6 +113,7 @@
         left: 0;
         height: 2px;
         width: 0;
+        transition: width 0.4s;
         background: $purple-primary;
       }
       &:hover::before {

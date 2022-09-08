@@ -158,9 +158,7 @@ $padding-section: 59px;
   inset: 0;
   background: rgba(0, 0, 0, 0.3);
   display: none;
-  border-radius: 5px;
   animation: blur linear 0.3s;
-  transition: all 0.3s;
   &__content {
     color: #fff;
     top: 50%;
@@ -221,4 +219,7 @@ $padding-section: 59px;
   min-height: calc(100% - $header-height - $player-height);
   padding-top: 70px;
   position: relative;
+}
+.bxs-heart {
+  color: #ea7aa0;
 }

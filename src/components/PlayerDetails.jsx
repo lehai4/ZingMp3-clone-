@@ -9,12 +9,14 @@ const PlayerDetails = (props) => {
     status: false,
     data: [...data1],
   };
+  console.log(idSong);
+  console.log(song);
   return (
     <Fragment>
       <div className="scroll">
         <div className="scroll-bar">
           <div className="player-queue__list">
-            {songs?.map((item, id) => (
+            {songs?.map((item) => (
               <div index={item.id} data-index={item.id} key={item.id}>
                 <div
                   className={clsx(
@@ -23,8 +25,6 @@ const PlayerDetails = (props) => {
                       idSong === item.id && idSong === song?.id ? "active" : ""
                     }`
                   )}
-                  key={id}
-                  onClick={() => handlePlaySong(item.id)}
                 >
                   <div className="player-queue__list__item__content">
                     <div className="player-queue__list__item__content__left">
@@ -33,7 +33,10 @@ const PlayerDetails = (props) => {
                           <img src={item?.image} alt={song?.name} />
                         </figure>
                         <div className="opacity"></div>
-                        <div className="icon-hover">
+                        <div
+                          className="icon-hover"
+                          onClick={() => handlePlaySong(item.id)}
+                        >
                           <FontAwesomeIcon icon={faPlay} className="icon" />
                         </div>
                       </div>
