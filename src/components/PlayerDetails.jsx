@@ -9,8 +9,6 @@ const PlayerDetails = (props) => {
     status: false,
     data: [...data1],
   };
-  console.log(idSong);
-  console.log(song);
   return (
     <Fragment>
       <div className="scroll">

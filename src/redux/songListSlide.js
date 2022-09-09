@@ -16,7 +16,6 @@ const songListSlide = createSlice({
     handleGetAllSong: (state, action) => {
       const newSong = [...action.payload];
       state.songs = newSong;
-      // let tag = action.payload.forEach((item) => console.log(item));
     },
   },
 });
